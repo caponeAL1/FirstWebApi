@@ -53,7 +53,7 @@ namespace FirstWebApi.Controllers
         //        return "Employee Added To Database";
         //    }
         //}
-        [HttpPost("/AddEmployee")]
+        [HttpPost("/AddNewEmployees")]
         public int AddEmployee(EmpViewModel newemp)
         {
 
@@ -76,8 +76,8 @@ namespace FirstWebApi.Controllers
             _repositoryEmployee.AddEmployee(employee);
             return 1;
         }
-        [HttpPut]
-        public int Put(int id, [FromBody] EmpViewModel emp)
+        [HttpPut("/EditEmployee")]
+        public int EditEmployee(int id, [FromBody] EmpViewModel emp)
         {
             Employee employee = new Employee();
             employee.EmployeeId = emp.EmpId;
@@ -86,7 +86,7 @@ namespace FirstWebApi.Controllers
             _repositoryEmployee.UpdateEmployee(employee);
             return 1;
         }
-        [HttpGet("/DeleteEmployee")]
+        [HttpDelete("/DeleteEmployee")]
         public string DeleteEmployee(int id)
         {
             int employeestatus = _repositoryEmployee.DeleteEmployee(id);

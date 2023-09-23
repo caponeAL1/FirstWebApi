@@ -41,14 +41,17 @@ namespace FirstWebApi.Model
         public int UpdateEmployee(Employee updatedEmployee)
         {
             EntityState es = _context.Entry(updatedEmployee).State;
-            Console.WriteLine($"EntityState B4Add: {es.GetDisplayName()}");
-            _context.Employees.Add(updatedEmployee);
+            Console.WriteLine($"EntityState B4update:{es.GetDisplayName()}");
+            _context.Employees.Update(updatedEmployee);
             es = _context.Entry(updatedEmployee).State;
-            Console.WriteLine($"EntityState After Add:{es.GetDisplayName()}");
+            Console.WriteLine($"EntityState After Update:{es.GetDisplayName()}");
             int result = _context.SaveChanges();
             es = _context.Entry(updatedEmployee).State;
-            Console.WriteLine($"EntityState After SaveChanges:{es.GetDisplayName()}");
+            Console.WriteLine($"EntityState After saveChanges:{es.GetDisplayName()}");
             return result;
+
+
+
         }
         public int DeleteEmployee(int id)
         {

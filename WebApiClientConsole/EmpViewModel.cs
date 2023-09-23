@@ -11,4 +11,5 @@
         public string City { get;set; }=string.Empty;
         public int? ReportsTo { get; set; }
     }
+
 }

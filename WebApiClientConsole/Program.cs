@@ -1,5 +1,8 @@
 ﻿using WebApiClientConsole;
 
 Console.WriteLine("API CLIENT");
-EmployeeApiClient.CallGetAllEmployee().Wait();
-Console.ReadLine(); 
+//EmployeeApiClient.GetAllListlEmployee().Wait();
+//EmployeeApiClient.AddNewEmployee().Wait();
+//Console.ReadLine(); 
+EmployeeApiClient.DeleteEmployee(15).Wait();
+Console.ReadLine();
